@@ -2,8 +2,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{xparse}
+
+% Pæne fonte. Mums mums mums!
+\usepackage[sf]{libertine}
 \usepackage[sc]{mathpazo}
 \linespread{1.06}
 \usepackage{microtype}
@@ -24,6 +29,24 @@
 ]{biblatex}
 \addbibresource{laser.bib}
 
+% Afledte, partielle og ej, der alle tager to argumenter (som
+% \frac). \diff er almindeligt afledt én gang og \ddiff er to gange -
+% begge med oprejste(!) hårde d'er. \pdiff er partielt afledt én gang
+% og \ppdiff to gange.
+\newcommand\pdiff[3][\partial]{\frac{#1 #2}{#1 #3}}
+\newcommand\ppdiff[3][\partial]{\frac{#1^2 #2}{#1 #3^2}}
+\newcommand\ddiff[2]{\pdiff[\mathrm{d}]{#1}{#2}}
+\newcommand\dddiff[2]{\ppdiff[\mathrm{d}]{#1}{#2}}
+
+% Hårdt og oprejst d til brug for integraler. \intd laver et halvt
+% mellemrum før d'et og bruges normalt. \intd* laver ikke mellemrum og
+% bruges efter fx hegn, der laver egne mellemrum.
+\NewDocumentCommand{\intd}{s}{\IfBooleanTF{#1}{}{\,}\mathrm{d}}
+
+% Random convenience.
+\newcommand{\inv}{^{-1}}             % "I minus første"
+\newcommand{\idx}[1]{_{\textup{#1}}} % Tekst-indeks med få tastetryk.
+\newcommand{\order}[1]{^{\textup{(#1)}}} % Orden
 
 \begin{document}
 \author{
@@ -32,14 +55,31 @@
   Michael Munch \\
   Steffen Videbæk Fredsgaard \\
 }
-\title{Non-linear optics}
-\date{\today}
+\title{Non-linear optics}\date{\today}
 \maketitle
 
 \tableofcontents
 
 \chapter{Introduction}
 \label{cha:intro}
+
+During the better part of the course we have studied linear phenomena,
+that is the interaction between matter and light described by the wave
+equation
+\begin{align}
+  \label{eq:wave-general}
+  \nabla^2 \mathbf E - \frac{1}{c^2} \ppdiff{\mathbf E}{t}
+  = \frac{1}{\epsilon_0c^2} \ppdiff{\mathbf P}{t},
+\end{align}
+where the polarization $\mathbf P$ is linear wrt. the electric field
+of the light $\mathbf E$, as described by $\mathbf P = \epsilon_0 \chi
+\mathbf E$, where $\chi$ is electric suscpetibility of the medium. The
+course has touched upon non-linear phenomena, where the polarization
+can be expanded as $\mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
+\chi\order2 \mathbf E^2 + \dots )$.
+
+In this project we describe and discuss two such effects, namely beam
+self-focusing using the Kerr effect, and wave mixing.
 
 
 \include{kerr}
