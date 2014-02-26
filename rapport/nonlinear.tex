@@ -1,0 +1,51 @@
+\documentclass[a4paper,oneside,article]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage[sc]{mathpazo}
+\linespread{1.06}
+\usepackage{microtype}
+
+% Fancy break med tre små stjerner, der signalerer et skifte, der ikke
+% er start nok til at skulle have egen opgavebetegnelse.
+\usepackage{fourier-orns}
+\newcommand{\starbreak}{%
+\fancybreak{\starredbullet\quad\starredbullet\quad\starredbullet}}
+
+% BibLaTeX er nemmere at bruge end BibTeX og understøtter UTF-8 og
+% sortering på andet end engelsk ved brug af backenden biber, der er
+% standard.
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  %sortlocale=da_DK,
+]{biblatex}
+\addbibresource{laser.bib}
+
+
+\begin{document}
+\author{
+  Anders Aspegren Søndergaard \\
+  Kristoffer Theis Skalmstang \\
+  Michael Munch \\
+  Steffen Videbæk Fredsgaard \\
+}
+\title{Non-linear optics}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+
+\nocite{*}
+\printbibliography
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
