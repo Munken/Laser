@@ -28,6 +28,11 @@
   %sortlocale=da_DK,
 ]{biblatex}
 \addbibresource{laser.bib}
+% Med article som option til memoir, så bliver references en /section
+% og det vil vi ikke have. Derfor:
+\defbibheading{bibliography}[\bibname]{%
+  \chapter{#1}%
+  \markboth{#1}{#1}}
 
 % Afledte, partielle og ej, der alle tager to argumenter (som
 % \frac). \diff er almindeligt afledt én gang og \ddiff er to gange -

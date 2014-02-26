@@ -1,6 +1,43 @@
 \chapter{The Kerr effect}
 \label{cha:kerr}
 
+The Kerr effect is found in media, where the index of refraction is
+dependent on the electric field of the propagating light. For real
+life laser beams, where the (time avaraged) amplitude of electric
+field depends on the position in the beam, this leads to a index of
+refraction varying over the spacial position within the beam. Under
+certain and experimentally obtainable conditions, this leads to
+self-focusing of the beam within a passive medium.
+
+
+\section{Mathematical formulation}
+\label{sec:kerr-math}
+
+As for second harmonic generation, which has been described in the
+course, our model is a two-state atom and a monochromatic field with
+semi-classical light/matter interaction. As in \cite{milonni}, the
+frequency of monochromatic laser field is determined by the energies
+of the two states of the atom, $\omega = \frac{E_2 - E_1}{\hbar}$,
+leading to the expression
+\begin{align}
+  \label{eq:kerr-laser-field}
+  E = \mathcal{E}(r, \omega) e^{-i \omega t},
+\end{align}
+for the electric field in a isotropic material with radial symmetry;
+here $\mathcal{E}$ is the complex field amplitude. The polarization
+can then be described similarily as $\mathcal{P}(r, \omega) e^{-i
+  \omega t}$, where strength of the polarization $\mathcal{P}$ has
+both a linear and a non-linear contribution.
+
+In this formulation, the wave equation becomes
+\begin{align}
+  \label{eq:kerr-wave-eqn}
+  \nabla^2 \mathcal{E} + \frac{\omega^2}{c^2} \mathcal{E}
+  = \frac{1}{\epsilon_0 c^2} \mathcal{P}
+\end{align}
+
+
+
 
 
 %%% Local Variables: 
