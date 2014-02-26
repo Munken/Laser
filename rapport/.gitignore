@@ -1,0 +1,14 @@
+auto/
+*~
+*.aux
+*.bbl
+*.bcf
+*.ilg
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.rum.xml
+*.synctex*
+*.toc
