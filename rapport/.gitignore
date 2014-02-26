@@ -2,6 +2,7 @@ auto/
 *~
 *.aux
 *.bbl
+*.blg
 *.bcf
 *.ilg
 *.lof
@@ -9,6 +10,6 @@ auto/
 *.lot
 *.nav
 *.out
-*.rum.xml
+*.run.xml
 *.synctex*
 *.toc
