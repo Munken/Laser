@@ -10,80 +10,172 @@ certain and experimentally obtainable conditions, this leads to
 self-focusing of the beam within a passive medium.
 
 
-\section{Mathematical formulation}
+% \section{Mathematical formulation}
+% \label{sec:kerr-math}
+
+% As for second harmonic generation, which has been described in the
+% course, our model is a two-state atom and a monochromatic field with
+% semi-classical light/matter interaction. The frequency of
+% monochromatic laser field is determined by the energies of the two
+% states of the atom, $\omega = \frac{E_2 - E_1}{\hbar}$. In the
+% following we follow \textcite[][sec. 10.3]{milonni}, which gives the
+% expression
+% \begin{align}
+%   \label{eq:kerr-laser-field}
+%   E = \mathcal{E}(r, \omega) e^{-i \omega t},
+% \end{align}
+% for the electric field in a centrosymmetric (ie. the quantum states
+% have definite parity) and isotropic material; here $\mathcal{E}$ is
+% the complex field amplitude. The polarization can then be described
+% similarily as $\mathcal{P}(r, \omega) e^{-i \omega t}$, where strength
+% of the polarization $\mathcal{P}$ has both a linear and a nonlinear
+% contribution.
+
+% In this formulation, the wave equation becomes
+% \begin{align}
+%   \label{eq:kerr-wave-eqn}
+%   \nabla^2 \mathcal{E} + \frac{\omega^2}{c^2} \mathcal{E}
+%   = - \frac{\omega^2}{\epsilon_0 c^2} \mathcal{P},
+% \end{align}
+% where the lowest-order nonlinear polarization is
+% \begin{align}
+%   %\nonumber
+%   \mathcal{P} &= \mathcal{P}^{\textup L} + \mathcal{P}^{\textup{NL}}
+%   %\\
+%   \label{eq:kerr-polarization}
+%   = \epsilon_0 \chi_1 \mathcal{E}
+%   + \epsilon_0 \chi_3 |\mathcal{E}|^2 \mathcal{E}.
+% \end{align}
+% It should be noted, that the succeptibilities here are not simple
+% scalars, but are certain values of the nonlinear succeptibility
+% tensor, which is discussed in \textcite[sec.~10.2]{milonni}. In
+% our model using a monochromatic field, $\chi_1$ and $\chi_3$ are
+% constant as $\omega$ is constant.
+
+% When the field intensity is not large enough to require higher than
+% third order terms in the polarization, the polarization term of the
+% wave equation~\eqref{eq:kerr-wave-eqn} becomes
+% \begin{align}
+%   \label{eq:kerr-wave-pol}
+%   - \chi_1 \frac{\omega^2}{c^2} \mathcal{E}
+%   - \chi_3 \frac{\omega^2}{c^2} |\mathcal{E}|^2 \mathcal{E}
+%   \equiv - \chi \frac{\omega^2}{c^2} \mathcal{E}.
+% \end{align}
+% Permittivity, succeptibility, and refractive index i related as $n^2 =
+% \epsilon = 1 + \chi$ and we find that
+% \begin{align}
+%   n &= \sqrt{1 + \chi_1 + \chi_3 |\mathcal{E}|^2}
+%   = n_0 \sqrt{1 + \frac{\chi_3}{n_0^2} |\mathcal{E}|^2}
+%   \simeq n_0 + \frac{\chi_3}{2n_0} |\mathcal{E}|^2
+%   \\
+%   \label{eq:kerr-n-chi}
+%   &\equiv n_0 + \tfrac{1}{2} |\mathcal{E}|^2 n_2,
+% \end{align}
+% where $n_0 = \sqrt{1 + \chi_1}$ is the linear refractive index in the
+% medium. Defining $E = \tfrac{1}{2}( \mathcal{E} e^{-i \omega t} +
+% \text{c.c.})$ we arrive at the Kerr nonlinearity
+% $
+% %\begin{align}
+% %  \label{eq:kerr-nonlin}
+% n = n_0 + n_2 E^2,
+% %\end{align}
+% $ which is an approximation, where we have discarded terms of order
+% higher than two (only even orders appear in the full expression). We
+% are assured by \textcite{milonni}, that this is indeed an excellent
+% approximation.
+
+
+\section{Mathematical details at a glance}
 \label{sec:kerr-math}
 
-As for second harmonic generation, which has been described in the
-course, our model is a two-state atom and a monochromatic field with
-semi-classical light/matter interaction. The frequency of
-monochromatic laser field is determined by the energies of the two
-states of the atom, $\omega = \frac{E_2 - E_1}{\hbar}$. In the
-following we follow \textcite[][sec. 10.3]{milonni}, which gives the
-expression
-\begin{align}
-  \label{eq:kerr-laser-field}
-  E = \mathcal{E}(r, \omega) e^{-i \omega t},
-\end{align}
-for the electric field in a centrosymmetric (ie. the quantum states
-have definite parity) and isotropic material; here $\mathcal{E}$ is
-the complex field amplitude. The polarization can then be described
-similarily as $\mathcal{P}(r, \omega) e^{-i \omega t}$, where strength
-of the polarization $\mathcal{P}$ has both a linear and a nonlinear
-contribution.
-
-In this formulation, the wave equation becomes
+The mathematical formulation of the Kerr effect is derived in
+\textcite[sec.~10.5]{milonni}. For a monochromatic laser field $E =
+\mathcal{E} e^{-i \omega t}$ with frequency $\omega$ in an isotropic
+and centrosymmetric medium (ie. a medium which quantum states have
+definite parity), an alternative wave equation for the complex laser
+field and polarization amplitudes is found. The most important point
+here is, that the polarization has a linear and a nonlinear
+contribution $\mathcal{P} = \mathcal{P}^{\textup L} +
+\mathcal{P}^{\textup{NL}}$:
 \begin{align}
   \label{eq:kerr-wave-eqn}
   \nabla^2 \mathcal{E} + \frac{\omega^2}{c^2} \mathcal{E}
-  = - \frac{\omega^2}{\epsilon_0 c^2} \mathcal{P},
-\end{align}
-where the lowest-order nonlinear polarization is
-\begin{align}
-  %\nonumber
-  \mathcal{P} &= \mathcal{P}^{\textup L} + \mathcal{P}^{\textup{NL}}
+  &= - \frac{\omega^2}{\epsilon_0 c^2} \mathcal{P}
   %\\
-  \label{eq:kerr-polarization}
-  = \epsilon_0 \chi_1 \mathcal{E}
-  + \epsilon_0 \chi_3 |\mathcal{E}|^2 \mathcal{E}.
+  = - \frac{\omega^2}{\epsilon_0 c^2} \left( \epsilon_0 \chi_1
+    \mathcal{E} + \epsilon_0 \chi_3 |\mathcal{E}|^2 \mathcal{E}
+  \right).
 \end{align}
 It should be noted, that the succeptibilities here are not simple
 scalars, but are certain values of the nonlinear succeptibility
-tensor, which is discussed in \textcite[sec.~10.2]{milonni}. In
-our model using a monochromatic field, $\chi_1$ and $\chi_3$ are
-constant as $\omega$ is constant.
-
-When the field intensity is not large enough to require higher than
-third order terms in the polarization, the polarization term of the
-wave equation~\eqref{eq:kerr-wave-eqn} becomes
+tensor. For a monochromatic field, $\chi_1$ and $\chi_3$ are constant
+as $\omega$ is constant. Defining \fxwarning{Implicit approksimation:
+  feltet er ikke så stærkt, at der kræves højere ordener.}
 \begin{align}
-  \label{eq:kerr-wave-pol}
-  - \chi_1 \frac{\omega^2}{c^2} \mathcal{E}
+  - \chi \frac{\omega^2}{c^2} \mathcal{E}
+  \equiv - \chi_1 \frac{\omega^2}{c^2} \mathcal{E}
   - \chi_3 \frac{\omega^2}{c^2} |\mathcal{E}|^2 \mathcal{E}
-  \equiv - \chi \frac{\omega^2}{c^2} \mathcal{E}.
 \end{align}
-Permittivity, succeptibility, and refractive index i related as $n^2 =
-\sqrt{\epsilon}^2 = 1 + \chi$ and we find that
+and using $n^2 = 1 + \chi$ leads to
 \begin{align}
-  \label{eq:kerr-n-chi}
   n &= \sqrt{1 + \chi_1 + \chi_3 |\mathcal{E}|^2}
   = n_0 \sqrt{1 + \frac{\chi_3}{n_0^2} |\mathcal{E}|^2}
-  \simeq n_0 + \frac{\chi_3}{2n_0} |\mathcal{E}|^2
   \\
-  &\equiv n_0 + \tfrac{1}{2} |\mathcal{E}|^2 n_2,
+  &\simeq n_0 + \frac{\chi_3}{2n_0} |\mathcal{E}|^2
+  \label{eq:kerr-n-chi}
+  \equiv n_0 + \tfrac{1}{2} |\mathcal{E}|^2 n_2,
 \end{align}
-where $n_0 = 1 + \chi$ is the linear refractive index in the
-medium. Defining $E = \tfrac{1}{2}( \mathcal{E} e^{-i \omega t} +
-\text{c.c.})$ we arrive at the Kerr nonlinearity
-$
-%\begin{align}
-%  \label{eq:kerr-nonlin}
-n = n_0 + n_2 E^2,
-%\end{align}
-$ which is an approximation, where we have discarded terms of order
-higher than two (only even orders appear in the full expression). We
-are assured by \textcite{milonni}, that this is indeed an excellent
-approximation.
+where $n_0 = \sqrt{1 + \chi_1}$ is the linear refractive index in the
+medium. Clearly, the effective refractive index felt by the
+propagating wave, depends on the form of the electric field.
 
+
+\section{Qualitative interpretation}
+\label{sec:kerr-interpr}
+
+As shown i figure~\ref{fig:kerr-refrac}, a gaussian beam, which is a
+beam exhibiting cylindrical symmetry and where the intensity
+distribution is or nearly is gaussian, feels a larger refractive index
+closer to the beam axis. Eqn.~\eqref{eq:kerr-n-chi} shows, that this
+nonlinear correction is proportional to the norm square of the field
+amplitude, ie. the beam intensity.
+
+The beam size of an gaussian beam is not constant, but varies along
+the beam axis $z$, with minimum beam cross section found at the beam
+waist. Using a geometric interpretation of the light, rays moving away
+from the waist have increasing distance from the axis, ie. radial
+distance $r$, leading to a broadening of the beam and a lower
+intensity. As such, the rays move from a region of high to lower
+refraction index, leading to a reflection of the ray back towards the
+beam axis.
+
+\begin{figure}[t!]
+  \centering
+  \fbox{\begin{minipage}[t][3cm]{.3\linewidth}
+      \centering\vspace*{0pt plus 1 fill}
+      Woop woop!
+      \vspace*{0pt plus 1 fill}
+    \end{minipage}}
+  \caption{Gaussisk beamprofil og effektivt brydningsindeks.}
+  \label{fig:kerr-refrac}
+\end{figure}
+
+This self-focusing competes with diffractive spreading and below a
+certain critical intensity, self-focusing is not observed. This limit
+is normally given in terms of total beam power, for example:
+\begin{align}
+  \label{eq:1}
+  P\idx{crit}^{\textup{gauss}}
+  &\sim \frac{c \epsilon_0}{8 \pi} \frac{\lambda^2}{n_2}
+  &&\text{Gaussian beam \cite{milonni}},
+  \\
+  P\idx{crit}^{\textup{cyl}}
+  &\approx \frac{c a^2}{64} \frac{\lambda^2}{n_2}
+  &&\text{Cylindringcal beam of uniform intensity \cite{prl-selftrap}},
+\end{align}
+where the angular diffractive divergence of the cylindrical beam is $a
+\lambda / n_0 2 r$. Note here, that the critical power decreases
+linearly in $n_2$ but increases quadratically in wavelength.
 
 
 
