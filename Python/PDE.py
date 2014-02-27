@@ -1,7 +1,7 @@
 from __future__ import division
 from pylab import *
 
-Nr = 500; Nz = 10
+Nr = 500; Nz = 100
 Rmax = 1; Zmax = 1E-5
 dR = Rmax / Nr; dZ = Zmax / Nz
 R = np.linspace(-Rmax, Rmax, Nr)
@@ -18,8 +18,8 @@ def createA(A, E):
         x = b
         if i >= 1: A[i-1, i] = x
         if i < E.size-1: A[i, i+1] = -x
-        if i >= 2: A[i-2, i] = rI *(-b**2)
-        if i < E.size-2: A[i+2, i] = rI *(-b**2)
+        if i >= 2: A[i-2, i] = -1*rI *(b**2)
+        if i < E.size-2: A[i+2, i] = -1*rI *(b**2)
 
 
     # A[0, 0] = A[0, 1] = 0.5*(a + (b**2) - E[0]*np.conj(E[0]))
@@ -53,7 +53,7 @@ def createB(B, E):
 def pde_solve():
 
     E=np.zeros((Nz+1, Nr),dtype='complex')
-    E[0, :] = np.exp(-np.square(R)*20)
+    E[0, :] = 1E-3*np.exp(-np.square(R)*20)
 
     A = np.zeros((Nr, Nr),dtype='complex')
     B = np.zeros((Nr, Nr),dtype='complex')
