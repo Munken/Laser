@@ -38,7 +38,7 @@ the Crank-Nicolson method, which applies for equations of the form
 This is the case for our equation, since it can be rewritten as
 \begin{equation}
   \label{eq:kerr-diff-crank}
-  i\pdiff{E}{z} = -\half \left[\frac{1}{r} \pdiff{E}{r} + \ppdiff{E}{r} + |E|^{2} E \right]. 
+  i\pdiff{E}{z} = -\frac{1}{r} \pdiff{E}{r} - \ppdiff{E}{r} - |E|^{2} E \right]. 
 \end{equation}
 
 In order to evaluate this numerically we discretise $z$ and $r$ in order to make a grid. The first
