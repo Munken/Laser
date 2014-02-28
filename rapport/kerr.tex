@@ -89,7 +89,7 @@ self-focusing of the beam within a passive medium.
 \label{sec:kerr-math}
 
 The mathematical formulation of the Kerr effect is derived in
-\textcite[sec.~10.5]{milonni}. For a monochromatic laser field $E =
+\textcite[sec.~10.3]{milonni}. For a monochromatic laser field $E =
 \mathcal{E} e^{-i \omega t}$ with frequency $\omega$ in an isotropic
 and centrosymmetric medium (ie. a medium which quantum states have
 definite parity), an alternative wave equation for the complex laser
@@ -123,7 +123,7 @@ and using $n^2 = 1 + \chi$ leads to
   \\
   &\simeq n_0 + \frac{\chi_3}{2n_0} |\mathcal{E}|^2
   \label{eq:kerr-n-chi}
-  \equiv n_0 + \tfrac{1}{2} |\mathcal{E}|^2 n_2,
+  \equiv n_0 + \tfrac{1}{2} n_2 |\mathcal{E}|^2,
 \end{align}
 where $n_0 = \sqrt{1 + \chi_1}$ is the linear refractive index in the
 medium. Clearly, the effective refractive index felt by the
@@ -171,11 +171,22 @@ is normally given in terms of total beam power, for example:
   \\
   P\idx{crit}^{\textup{cyl}}
   &\approx \frac{c a^2}{64} \frac{\lambda^2}{n_2}
-  &&\text{Cylindringcal beam of uniform intensity \cite{prl-selftrap}},
+  &&\text{Cylindrical beam of uniform intensity \cite{prl-selftrap}},
 \end{align}
 where the angular diffractive divergence of the cylindrical beam is $a
 \lambda / n_0 2 r$. Note here, that the critical power decreases
 linearly in $n_2$ but increases quadratically in wavelength.
+
+In optics, media where this self-focusing is present are termed Kerr
+lenses, as the passive medium acts as a lens for beams passing
+through. The dioptric power (inverse focal length) of a Kerr lens of
+length $z$ for a circular gaussian beam of power $P$ with waist radius
+$w_0$ is
+\cite{yefet-kerrlens}
+\begin{align}
+  \label{eq:kerr-focal-length}
+  f\idx{kerr}\inv = \frac{4}{\pi} \frac{n_2 P}{w_0^4} z.
+\end{align}
 
 \input{kerrnumerics}
 
