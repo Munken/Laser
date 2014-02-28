@@ -1,9 +1,9 @@
 \section{Numerical work}
 
 We wish to confirm the numerical results from
-\textcite{prl-selffocus}, that is we wish to show, that a Gaussian
+\textcite{prl-selffocus}. That is, we wish to show that a Gaussian
 beam is focused when propagating in a Kerr lens. Our starting point is
-the full wave equation and the assumption, that the propagating beam
+the full wave equation, and the assumption that the propagating beam
 is cylindrical. Per \textcite{prl-selffocus} this leads to a
 dimensionless form of the wave equation
 \begin{align}
@@ -16,7 +16,7 @@ dimensionless form of the wave equation
 where $\tilde r = r/a$, $a$ is a characteristic length of the beam
 intensity profile, $\tilde z = z / 2ka^2$ is the characteristic axial
 length of the beam, $k = n_0 \omega / c$ is the wave number of the
-laser field, and $\tilde E = (\chi_1/\chi_3)^{1/2} k a
+laser field and $\tilde E = (\chi_1/\chi_3)^{1/2} k a
 \mathcal{E}$.
 
 The point of solving the dimensionless wave equation is, that we
@@ -28,13 +28,14 @@ generalized monochromatic circular Gaussian beam.
 The partial differential equation given in Eqn.~\eqref{eq:kerr-diff}
 is categorized as a 1D diffusion problem. To simplify notation, we
 drop the tildes from the variables in the following discussion, but
-the variables remain dimensionless. A method to solve this problem is
-the Crank-Nicolson method which applies for equations of the form
+the variables remain dimensionless. 
+A method for solving this problem is
+the Crank-Nicolson method, which applies for equations of the form
 \begin{equation}
   \label{eq:Crank-Nicolson}
-  \pdiff{u}{t} = F \Big(u, x, t, \pdiff{u}{x}, \ppdiff{u}{x} \Big), 
+  \pdiff{u}{t} = F \Big(u, x, t, \pdiff{u}{x}, \ppdiff{u}{x} \Big). 
 \end{equation}
-which is also the case for our equation, since it can be rewritten as
+This is the case for our equation, since it can be rewritten as
 \begin{equation}
   \label{eq:kerr-diff-crank}
   i\pdiff{E}{z} = -\half \left[\frac{1}{r} \pdiff{E}{r} + \ppdiff{E}{r} + |E|^{2} E \right]. 
@@ -47,7 +48,7 @@ and second order derivatives can then be approximated by the central finite diff
   f'(x) = \frac{f(x+\half h) - f(x - \half x)}{h} \quad f''(x) = \frac{f(x+h) - 2f(x) + f(x-h)}{h^{2}}.
 \end{equation}
 
-The Crank-Nicolson method then relates the value of $E$ at the $n+1$ $z$-step to the value in the
+The Crank-Nicolson method relates the value of $E$ at the $n+1$ $z$-step to the value in the
 $n$'th step via the equalities of the forward and backward Euler method. Note that $i$ denote the
 step in $r$
 \begin{equation}
@@ -68,7 +69,7 @@ where $\alpha = -2i/\!{\Delta z}$ and $\beta = 1/{2 \Delta r}$.
 
 This is almost a five-diagonal matrix equation except for the term that is cubic in
 $E_{i}^{n+1}$. However with sufficiently small steps one can approximate the cubic term to be
-$|E_{i}^{n+1}|^{2}E_{i}^{n+1} \approx |E_{i}^{n}|^{2}E_{i}^{n+1}$ ie. take the quadratic part from
+$|E_{i}^{n+1}|^{2}E_{i}^{n+1} \approx |E_{i}^{n}|^{2}E_{i}^{n+1}$ i.e. take the quadratic part from
 the last step. In each time step, one must then solve the matrix inversion problem
 \begin{equation}
   \label{eq:matrix}
@@ -83,9 +84,9 @@ Eqn.~\eqref{eq:kerr-long}.
 We have implemented the Crank-Nicolson algorithm in the Python language. The source code can be found at
 \url{https://github.com/Munken/Laser}.
 
-For the numerical simulation, the boundary conditions are quite important. Since our beam is Gaussian
-we enforce that $E \rightarrow 0$ as $r \rightarrow \infty$. Furthermore the first derivative in $r
-= 0$ should be 0 since the beam is cylindrically symmetric.
+For the numerical simulation, the boundary conditions are quite important. Since our beam is Gaussian,
+we enforce that $E \rightarrow 0$ as $r \rightarrow \infty$.
+Furthermore the first derivative in $r = 0$ should be 0 since the beam is cylindrically symmetric.
 
 We have tried to introduce these boundary conditions in two ways. \Cref{fig:kerr-double} shows a
 simulation where we have simulated on $\pm r$. \Cref{fig:kerr-single} shows the same simulation
@@ -98,7 +99,7 @@ been able to reproduce \cite{prl-selffocus}[Fig. 1].
   \hfill
   \subbottom[Symmetric\label{fig:kerr-single}]{\includegraphics[width=0.45\columnwidth]{kerr_single}}
   \caption{The result of our numerical simulation after propagating 10 steps. The insets shows the
-    behavior around $r=0$.}
+    behaviour around $r=0$.}
   \label{fig:kerr-num}
 \end{figure}
 
