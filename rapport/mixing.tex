@@ -40,11 +40,12 @@ for a strong feedback in electric field change.
 \section{Numeric formulation of up-conversion}
 \label{sec:mixing-numeric}
 
-To get a numerical interpretation of the result, one can inject the up-conversion part of \cref{eq:MixPNL} into the wave equation of each wave:
+To get a numerical interpretation of the result, one can inject the up-conversion part of \cref{eq:MixPNL} into the time dependent wave equation of each wave \cite[Equation 3.39]{shen}:
 
 \begin{align}
-\paren{ \pdiff{}{z} } 
+\paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t} = \frac{i 2 \pi \omega_i^{2}}{k c^2} \mathbf{P}^{NL} \paren{z,t} e^{i \paren{k_i z - \omega t}},
 \end{align}
+where we used that $\omega_i = k_ic$
 
 
 Example KDP crystal
