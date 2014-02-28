@@ -1,10 +1,22 @@
 from pylab import *
 
+plot3d = True;
+
+try:
+     from mpl_toolkits.mplot3d import Axes3D
+except ImportError:
+     plot3D = False;
+     print('Not plotting 3D.')
+
+
+
 Nr = 500; Nz = 1000
 Rmax = 2.5; Zmax = 0.001
 dR = Rmax / Nr; dZ = Zmax / Nz
 R = np.linspace(1E-3, Rmax, Nr)
 R2 = dR ** 2
+
+
 
 def solve_PDE2():
     E=np.zeros((Nz+1, Nr),dtype='complex')
@@ -39,6 +51,17 @@ def solve_PDE2():
     print(np.trapz(np.abs(E[0, :])))
     print(np.trapz(np.abs(E[-1, :])))
     # plot(R, E[-1, :])
+    
+    if (plot3d):
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        
+
+        X,Y = np.meshgrid(R,np.linspace(0,Zmax,Nz+1));
+
+        ax.plot_surface(X,Y,np.abs(E)**2);
+    
+    
     show()
 
 
