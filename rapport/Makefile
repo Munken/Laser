@@ -1,6 +1,8 @@
 .PHONY: all
 all:
 	pdflatex nonlinear.tex
+	biber nonlinear
+	pdflatex nonlinear.tex
 
 .PHONY: clean
 clean:
