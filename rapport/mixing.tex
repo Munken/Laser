@@ -1,6 +1,43 @@
-\chapter{Wave mixing}
+\chapter{Three-wave mixing}
 \label{cha:mixing}
 
+
+The Three-wave mixing is a property of the second order non-linearity of the polarity dependence of the electric field, $\Eps(t)$. 
+It is a phenonemon where the two waves mix together to a third. 
+
+
+
+\section{Mathematical formulation}
+\label{sec:mixing-math}
+
+To qualitatively examine the interaction between the two electromagnetic waves, of frequencies $\omega_1$ and $\omega_2$ with electric field amplitude $\Eps_1  \equiv \Eps(\omega_1)$ and $\Eps_1  \equiv \Eps(\omega_1)$ respectivily, a superposition of these monocromatic plane waves is composed: 
+\[
+\mathbf{\Eps}(t) = \Re (\Eps_1e^{i(\mathbf{k_1} \cdot \mathbf{r} - \omega_1 t)}+\Eps_2e^{i(\mathbf{k_2} \cdot \mathbf{r} \omega_2 t)}),
+\]
+and put into the second order part of the polarity expansion
+\begin{align}
+\mathbf{P}^{NL}= \varepsilon_0 \chi^{(2)} \mathbf{E}^2(t) \\
+&= \varepsilon_0 \chi^{(2)} 2 \Re [
+|E_1|^2e^{i2(\mathbf{k_1} z - \omega_1t)}+|E_2|^2e^{i2(\mathbf{k_2} z - \omega_2t)}\\
+& +2E_1E_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)}\\
+& +2E_1E_2^*e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - \omega_1-\omega_2)t}\\
+& +\left(|E_1|^2+|E_2|^2\right)e^{0}],
+\end{align}
+which has frequencies $0$, which is uninteresting, $2\omega_1$ and $2\omega_2$, which are the original frequencies second harmonics, and more interresting the difference and sum of the initial frequencies. The last two frequeny couplings are typically refered to as down- and up-conversion respectively. 
+
+
+\section{Numeric formulation}
+\label{sec:mixing-numeric}
+
+\begin{align}
+P = 
+\end{align}
+
+
+Example KDP crystal
+
+Notes:
+four wave frequency wave mixing of higher order
 
 %%% Local Variables: 
 %%% mode: latex
