@@ -4,7 +4,7 @@ from pylab import *
 Nr = 1000; Nz = 10
 Rmax = 2.5; Zmax = 1E-5
 dR = Rmax / Nr; dZ = Zmax / Nz
-R = np.linspace(1E-9, Rmax, Nr)
+R = np.linspace(0.1, Rmax, Nr)
 
 a = -2j/dZ
 b = 1/(2*dR)
@@ -53,7 +53,9 @@ def createB(B, E):
 def pde_solve():
 
     E=np.zeros((Nz+1, Nr),dtype='complex')
-    E[0, :] = np.exp(-np.square(R))
+    G = np.exp(-np.square(R))
+    E[0, 1:-1] = G[0:-2]
+    E[0, 0] = G[0]
 
     A = np.zeros((Nr, Nr),dtype='complex')
     B = np.zeros((Nr, Nr),dtype='complex')
@@ -84,8 +86,8 @@ def pde_solve():
 
     fig1 = plt.figure()
     ax1 = fig1.add_subplot(111)
-    ax1.set_ylim([0, 1.1])
-    ax1.set_xlim([0, 2])
+    # ax1.set_ylim([0, 1.1])
+    # ax1.set_xlim([0, 2])
 
     plt.xlabel("r")
     plt.ylabel("Intensity")
