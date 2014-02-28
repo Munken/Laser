@@ -3,6 +3,7 @@ all:
 	pdflatex nonlinear.tex
 	biber nonlinear
 	pdflatex nonlinear.tex
+	pdflatex nonlinear.tex
 
 .PHONY: clean
 clean:
