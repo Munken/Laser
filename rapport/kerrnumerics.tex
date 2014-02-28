@@ -2,11 +2,34 @@
 
 We wish to confirm the numerical results from
 \textcite{prl-selffocus}, that is we wish to show, that a gaussian
-beam is focused when propagating in a Kerr lense.
+beam is focused when propagating in a Kerr lens. Our starting point is
+the full wave equation and the assumption, that the propagating beam
+is cylindrical. Per \textcite{prl-selffocus} this leads to a
+dimensionless form of the wave equation
+\begin{align}
+  \label{eq:kerr-diff}
+   i \pdiff{\tilde E}{\tilde z} + \ppdiff{\tilde E}{\tilde r}
+   + \frac{1}{\tilde r} \pdiff{\tilde E}{\tilde r}
+   + |\tilde E|^2 \tilde E
+   = 0,
+\end{align}
+where $\tilde r = r/a$, $a$ is a characteristic length of the beam
+intensity profile, $\tilde z = z / 2ka^2$ is the characteristic axial
+length of the beam, $k = n_0 \omega / c$ is the wave number of the
+laser field, and $\tilde E = (\chi_1/\chi_3)^{1/2} k a
+\mathcal{E}$.
 
-The partial differential equation given in Eqn.~\eqref{eq:kerr-diff} is categorized as a 1D
-diffusion problem. A method to solve this problem is the Crank-Nicolson method which applies for
-equations of the form
+The point of solving the dimensionless wave equation is, that we
+minimize the dependence on physical properties of the beam. This
+simplifies the numerical approach and makes it easier to obtain a
+solution exhibiting the correct physical behavior albiet for at
+generalized monochromatic circular gaussian beam.
+
+The partial differential equation given in Eqn.~\eqref{eq:kerr-diff}
+is categorized as a 1D diffusion problem. To simplify notation, we
+drop the tildes from the variables in the following discussion, but
+the varibles remain dimensionless. A method to solve this problem is
+the Crank-Nicolson method which applies for equations of the form
 \begin{equation}
   \label{eq:Crank-Nicolson}
   \pdiff{u}{t} = F \Big(u, x, t, \pdiff{u}{x}, \ppdiff{u}{x} \Big), 
