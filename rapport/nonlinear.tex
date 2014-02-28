@@ -8,6 +8,14 @@
 \usepackage{xparse}
 \usepackage[draft]{fixme}
 
+\usepackage{cleveref}
+\usepackage{url}
+\urlstyle{rm}
+
+% Subfigure
+\newsubfloat{figure}% Allow subfloats in figure environment
+
+
 % Pæne fonte. Mums mums mums!
 \usepackage[sf]{libertine}
 \usepackage[sc]{mathpazo}
@@ -54,6 +62,10 @@
 \newcommand{\idx}[1]{_{\textup{#1}}} % Tekst-indeks med få tastetryk.
 \newcommand{\order}[1]{^{\textup{(#1)}}} % Orden
 \newcommand{\half}{\frac{1}{2}}
+
+\hyphenation{Fi-gu-re
+  fi-gu-re}
+
 
 \begin{document}
 \author{
