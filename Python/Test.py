@@ -1,50 +1,13 @@
-from pylab import *
+from numpy import *
+import os
+import matplotlib.pyplot as plt
 
-def solvePDE():
-    Nr, Nz = 100, 100
-    Rmax = 0.5
-    R = np.linspace(1E-3, Rmax, Nr)
+fig1 = plt.figure()
+ax1 = fig1.add_subplot(111)
+# ax1.semilogx(data[:,1],data[:,2])
 
-    E=np.zeros((Nr, Nz),dtype='complex')
-    E[:] = 1
-    gauss = np.exp(-np.square(R))
-    E[0, :] = gauss
+ax2 = plt.axes([.65, .6, .2, .2], axisbg='y')
+# ax2.semilogx(data[3:8,1],data[3:8,2])
+plt.setp(ax2, xticks=[], yticks=[])
 
-    x = 0
-    while should_run(x):
-        grad = np.gradient(E)
-
-        # First derivative
-        dEdr = grad[1]
-        dEdz = grad[0]
-        # Boundary
-        dEdr[:, 0] = 0
-        E[0, :] = gauss
-
-        # Second derivative
-        dEdrr = np.gradient(dEdr)[1]
-
-
-        E2 = R*E * np.conj(E)
-        DE = R*(1j * dEdz + dEdrr) + dEdr
-
-
-
-
-
-        print(x)
-        x += 1
-
-
-
-    # plot(R, grid[0, :])
-    plot(R, E[1, :])
-    plot(R, E[2, :])
-    plot(R, E[3, :])
-    show()
-
-def should_run(x):
-    return x < 80
-
-solvePDE()
-
+plt.show()

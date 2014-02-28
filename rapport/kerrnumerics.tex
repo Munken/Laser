@@ -54,6 +54,31 @@ the last step. In each timestep one must then solve the matrix inversion problem
 where the coefficients that make up these two matricies is the coefficients listed in
 Eqn.~\eqref{eq:kerr-long}. 
 
+\subsection{Results}
+\label{sec:kerr-results}
+
+We have implemented the Crank-Nicolson algorithm in the Python language. The code can be found on
+\url{https://github.com/Munken/Laser}.
+
+For the numerical simulation the boundary conditions it quite important. Since our beam is Gaussian
+we enforce that $E \rightarrow 0$ as $r \rightarrow \infty$. Furthermore the first derivative in $r
+= 0$ should be 0 since the beam is cylindrically symmetric.
+
+We have tried to introduce these boundary conditions in two ways. \Cref{fig:kerr-double} shows a
+simulation where we have simulated on $\pm r$. \Cref{fig:kerr-single} shows the same simulation
+where we have only simulated from 0. It is clear from these two figures that we have numerical
+instabilities for the small r-values. We have not been able to solve this problem so we have not
+been able to reproduce \cite{prl-selffocus}[Fig. 1]. 
+\begin{figure}[htb]
+  \centering
+  \subbottom[Symmetric\label{fig:kerr-double}]{\includegraphics[width=0.45\columnwidth]{kerr_double}}
+  \hfill
+  \subbottom[Symmetric\label{fig:kerr-single}]{\includegraphics[width=0.45\columnwidth]{kerr_single}}
+  \caption{The result of our nummerical simulation after propagating 10 steps. The insets shows the
+    behavior around $r=0$.}
+  \label{fig:kerr-num}
+\end{figure}
+
 
 
 %%% Local Variables: 
