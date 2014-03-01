@@ -7,7 +7,7 @@ It is a phenomenon where the two waves mix together to a third.
 
 
 
-\section{Mathematical formulation}
+\section{Mathematical formulation and uses}
 \label{sec:mixing-math}
 
 To qualitatively examine the interaction between the two electromagnetic waves, of frequencies $\omega_1$ and $\omega_2$ with electric field amplitude $\mathcal{E}_1  \equiv \mathcal{E}(\omega_1)$ and $\mathcal{E}_1  \equiv \mathcal{E}(\omega_1)$ respectively, a superposition of these monochromatic plane waves is composed: 
@@ -24,7 +24,7 @@ and put into the second order part of the polarity expansion \cite[sec.~21.2C]{s
 + 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\mathbf{k_1} - \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1-\omega_2)t)} 
 \right] \label{eq:MixPNL}.
 \end{align}
-Since this gives feedback to the electromagnetic field new frequencies are generated; $0$, the uninteresting one, $2\omega_1$ and $2\omega_2$, which are the original frequencies second harmonics, and more interesting, the sum and difference of the initial frequencies. The last two frequency couplings are often referred to as up- and down-conversion respectively.
+Since this gives feedback to the electromagnetic field in \cref{eq:wave-general}, new frequencies are generated; $0$, the uninteresting one, $2\omega_1$ and $2\omega_2$, which are the original frequencies second harmonics, and more interesting, the sum and difference of the initial frequencies. The last two frequency couplings are often referred to as up- and down-conversion respectively.
 
 It is clear that for the up- and down-conversion the third wave frequency will be:
 \[
@@ -36,6 +36,7 @@ and that a further phase matching constraint on the wave vector is necessary,
 \]
 for a strong feedback in electric field change.
 
+Physical this means that ones the third wave is created, it will also couple back to the two other waves, but these constraints secures that the aneutral interaction sustained through time and space. 
 
 
 
@@ -45,12 +46,12 @@ for a strong feedback in electric field change.
 
 To get a numerical interpretation of the result, one can inject the up-conversion part of \cref{eq:MixPNL} into the time dependent wave equation of each wave \cite[Equation 3.39]{shen}:
 
-\begin{align}
+\begin{align*}
 \paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t} 
 &= \frac{i 2 \pi \omega_i^{2}}{k c^2} \mathbf{P}^{NL} \paren{z,t} e^{i \paren{k_i z - \omega t}} \\
-&= \frac{i \omega_i \chi^{(2)}}{e n_i c} 2\mathcal{E}_1 \mathcal{E}_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)} e^{i \paren{k_i z - \omega t}}
+&= \frac{i \omega_i \chi^{(2)}}{n_i c} 2\mathcal{E}_1 \mathcal{E}_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)} e^{i \paren{k_i z - \omega t}}
 ,
-\end{align}
+\end{align*}
 where we used that $\omega_i = k_ic$
 
 
