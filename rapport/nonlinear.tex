@@ -15,6 +15,13 @@
 % Subfigure
 \newsubfloat{figure}% Allow subfloats in figure environment
 
+% Gauss-fuktion til plot af gaussisk beamprofil.
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.6}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}   
 
 % Pæne fonte. Mums mums mums!
 \usepackage[sf]{libertine}
