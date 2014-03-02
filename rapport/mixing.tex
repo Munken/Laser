@@ -1,8 +1,86 @@
-\chapter{Wave mixing}
+\chapter{Three-wave mixing}
 \label{cha:mixing}
 
+
+The Three-wave mixing is a property of the second order nonlinearity of the polarity dependence of the electric field, $\mathcal{E}(t)$. 
+It is a phenomenon where the two waves mix together to a third. 
+
+
+
+\section{Mathematical formulation and uses}
+\label{sec:mixing-math}
+
+To qualitatively examine the interaction between the two electromagnetic waves, of frequencies $\omega_1$ and $\omega_2$ with electric field amplitude $\mathcal{E}_1  \equiv \mathcal{E}(\omega_1)$ and $\mathcal{E}_1  \equiv \mathcal{E}(\omega_1)$ respectively, a superposition of these monochromatic plane waves is composed: 
+\[
+\mathbf{\mathcal{E}}(t) = \Re (\mathcal{E}_1e^{i(\mathbf{k_1} \cdot \mathbf{r} - \omega_1 t)}+\mathcal{E}_2e^{i(\mathbf{k_2} \cdot \mathbf{r} \omega_2 t)}),
+\]
+and put into the second order part of the polarity expansion \cite[sec.~21.2C]{saleh}
+\begin{align}
+     \mathbf{P}^{NL} & = \varepsilon_0 \chi^{(2)} \mathbf{E}^2(t) \nonumber \\
+&= \varepsilon_0 \chi^{(2)} 2 \Re \left[
+\left(|\mathcal{E}_1|^2+|\mathcal{E}_2|^2\right)e^{0} + |\mathcal{E}_1|^2e^{i2(\mathbf{k_1} z - \omega_1t)}+|\mathcal{E}_2|^2e^{i2(\mathbf{k_2} z - \omega_2t)} \right.\nonumber \\
+& \left.
++ 2\mathcal{E}_1 \mathcal{E}_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)} 
++ 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\mathbf{k_1} - \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1-\omega_2)t)} 
+\right] \label{eq:MixPNL}.
+\end{align}
+Since this gives feedback to the electromagnetic field in \cref{eq:wave-general}, new frequencies are generated; $0$, the uninteresting one, $2\omega_1$ and $2\omega_2$, which are the original frequencies second harmonics, and more interesting, the sum and difference of the initial frequencies. The last two frequency couplings are often referred to as up- and down-conversion respectively.
+
+It is clear that for the up- and down-conversion the third wave frequency will be:
+\begin{equation}
+  \label{qe:freqCond}
+\omega_3 = \omega_1 \pm \omega_2
+\end{equation}
+and that a further phase matching constraint on the wave vector is necessary,
+\[
+\mathbf{k}_3 = \mathbf{k}_1 \pm \mathbf{k}_2,
+\]
+for a strong feedback in electric field change.
+
+Physical this means that ones the third wave is created, it will also couple back to
+the two other waves, but these constraints secures that a neutral interaction sustained through time and space. 
+
+
+
+
+\section{Numeric formulation of up-conversion}
+\label{sec:mixing-numeric}
+
+To get a numerical interpretation of the result, one can assume the
+\cref{qe:freqCond} and inject the up-conversion part of \cref{eq:MixPNL} into the time dependent wave equation of each wave \cite[Equation 3.39]{shen}:
+
+\begin{align*}
+\paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t}
+&= \frac{i 2 \pi \omega_i^{2}}{k c^2} \mathbf{P}^{NL} \paren{z,t} e^{i \paren{k_i z - \omega_{i}
+    t}} \Rightarrow \tag{3.39}\\
+\paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t}
+&= \frac{i \omega_i \chi^{(2)}}{2 n_i c} \mathcal{E}_j^{*}\mathcal{E}_k e^{i (k_3 - k_2 -k_1) z
+  t}, \text{where } i \neq j \neq k \\
+% \paren{ \pdiff{}{z}  + \frac{1}{v_1^{g}} } \mathcal{E}_1 \paren{z, t}
+% &= \frac{i \omega_1 \chi^{(2)}}{2 n_1 c} \mathcal{E}_2^{*}\mathcal{E}_3 e^{i (k_3 - k_2 -k_1) z
+%     t} \\
+% \paren{ \pdiff{}{z}  + \frac{1}{v_2^{g}} } \mathcal{E}_2 \paren{z, t}
+% &= \frac{i \omega_2 \chi^{(2)}}{2 n_2 c} \mathcal{E}_1^{*}\mathcal{E}_3 e^{i (k_3 - k_2 -k_1) z
+%     t} \\
+%   \paren{ \pdiff{}{z}  + \frac{1}{v_3^{g}} } \mathcal{E}_3 \paren{z, t}
+%   &= \frac{i \omega_3 \chi^{(2)}}{2 n_3 c} \mathcal{E}_1\mathcal{E}_2 e^{i (k_3 - k_2 -k_1) z
+%     t}, \\
+\end{align*}
+where the identity $\omega_i = k_ic$ has been used, and also the rotating wave
+approximation and slowly varying amplitude approximation. These are equivalent to
+the coupled partial differential
+equations  (2) in \cite{bakker} and can be solved with the Runge-Kutta procedure
+as described.
+
+Typically this is done in KDP or KTP crystals such as the sum frequency conversion
+done in \cite{sumFreq} where a 455 nm is med from a 807 nm and a 1062 source. Though only with an efficienty of $0.01\%$.
+
+Multiple wave mixing can be optained at higher orders of nonlinearity terms, such
+that the third order gives rise to four-wave mixing, but these will naturaly become
+even more restrained. 
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "nonlinear"
 %%% End: 
+

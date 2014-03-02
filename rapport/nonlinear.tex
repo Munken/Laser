@@ -59,6 +59,9 @@
 \newcommand\ddiff[2]{\pdiff[\mathrm{d}]{#1}{#2}}
 \newcommand\dddiff[2]{\ppdiff[\mathrm{d}]{#1}{#2}}
 
+% Kommando til at lave parenteser på begge sider
+\newcommand\paren[1]{\left(#1\right)}
+
 % Hårdt og oprejst d til brug for integraler. \intd laver et halvt
 % mellemrum før d'et og bruges normalt. \intd* laver ikke mellemrum og
 % bruges efter fx hegn, der laver egne mellemrum.
@@ -85,7 +88,7 @@
 \maketitle
 
 \tableofcontents
-
+\newpage
 \chapter{Introduction}
 \label{cha:intro}
 
@@ -98,21 +101,21 @@ equation
   = \frac{1}{\epsilon_0c^2} \ppdiff{\mathbf P}{t},
 \end{align}
 where the polarization $\mathbf P$ is linear wrt. the electric field
-of the light $\mathbf E$, as described by $\mathbf P = \epsilon_0 \chi
-\mathbf E$, where $\chi$ is electric suscpetibility of the medium. The
-course has touched upon nonlinear phenomena, where the polarization
-can be expanded as $\mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
+$\mathbf E$, as described by $\mathbf P = \epsilon_0 \chi
+\mathbf E$, where $\chi$ is electric susceptibility of the medium and $\epsilon_0$ is the vacuum permittivity. The
+course briefly touched upon nonlinear phenomena, where the polarization
+is taylor expanded as $\mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
 \chi\order2 \mathbf E^2 + \dots )$.
 
-In this project we describe and discuss two such effects, namely beam
-self-focusing using the Kerr effect, and wave mixing.
+In this project, we describe and discuss two effects of such a nonlinearity: beam
+self-focusing using the Kerr effect; and wave mixing.
 
 
-\include{kerr}
-\include{mixing}
+\input{kerr}
+\input{mixing}
 
 
-
+\input{conclusion.tex}
 
 
 

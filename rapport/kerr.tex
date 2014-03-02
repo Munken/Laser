@@ -1,12 +1,12 @@
 \chapter{The Kerr effect}
 \label{cha:kerr}
 
-The Kerr effect is found in media, where the index of refraction is
-dependent on the electric field of the propagating light. For real
-life laser beams, where the (time avaraged) amplitude of electric
-field depends on the position in the beam, this leads to a index of
-refraction varying over the spacial position within the beam. Under
-certain and experimentally obtainable conditions, this leads to
+The Kerr effect is found in media where the index of refraction 
+depends on the electric field of the propagating light. For practical
+laser beams, the (time averaged) amplitude of the electric
+field depends on the position in the beam.
+This leads to spatial variation of the index of refraction. Under
+certain and experimentally obtainable conditions, this gives rise to
 self-focusing of the beam within a passive medium.
 
 
@@ -27,7 +27,7 @@ self-focusing of the beam within a passive medium.
 % for the electric field in a centrosymmetric (ie. the quantum states
 % have definite parity) and isotropic material; here $\mathcal{E}$ is
 % the complex field amplitude. The polarization can then be described
-% similarily as $\mathcal{P}(r, \omega) e^{-i \omega t}$, where strength
+% similarly as $\mathcal{P}(r, \omega) e^{-i \omega t}$, where strength
 % of the polarization $\mathcal{P}$ has both a linear and a nonlinear
 % contribution.
 
@@ -46,8 +46,8 @@ self-focusing of the beam within a passive medium.
 %   = \epsilon_0 \chi_1 \mathcal{E}
 %   + \epsilon_0 \chi_3 |\mathcal{E}|^2 \mathcal{E}.
 % \end{align}
-% It should be noted, that the succeptibilities here are not simple
-% scalars, but are certain values of the nonlinear succeptibility
+% It should be noted, that the susceptibilities here are not simple
+% scalars, but are certain values of the nonlinear susceptibility
 % tensor, which is discussed in \textcite[sec.~10.2]{milonni}. In
 % our model using a monochromatic field, $\chi_1$ and $\chi_3$ are
 % constant as $\omega$ is constant.
@@ -61,7 +61,7 @@ self-focusing of the beam within a passive medium.
 %   - \chi_3 \frac{\omega^2}{c^2} |\mathcal{E}|^2 \mathcal{E}
 %   \equiv - \chi \frac{\omega^2}{c^2} \mathcal{E}.
 % \end{align}
-% Permittivity, succeptibility, and refractive index i related as $n^2 =
+% Permittivity, susceptibility, and refractive index $i$ related as $n^2 =
 % \epsilon = 1 + \chi$ and we find that
 % \begin{align}
 %   n &= \sqrt{1 + \chi_1 + \chi_3 |\mathcal{E}|^2}
@@ -90,8 +90,8 @@ self-focusing of the beam within a passive medium.
 
 The mathematical formulation of the Kerr effect is derived in
 \textcite[sec.~10.3]{milonni}. For a monochromatic laser field $E =
-\mathcal{E} e^{-i \omega t}$ with frequency $\omega$ in an isotropic
-and centrosymmetric medium (ie. a medium which quantum states have
+\mathcal{E}(x,y,z) e^{-i \omega t}$ with frequency $\omega$ in an isotropic
+and centrosymmetric medium (i.e. a medium which quantum states have
 definite parity), an alternative wave equation for the complex laser
 field and polarization amplitudes is found. The most important point
 here is, that the polarization has a linear and a nonlinear
@@ -106,17 +106,17 @@ contribution $\mathcal{P} = \mathcal{P}^{\textup L} +
     \mathcal{E} + \epsilon_0 \chi_3 |\mathcal{E}|^2 \mathcal{E}
   \right).
 \end{align}
-It should be noted, that the succeptibilities here are not simple
-scalars, but are certain values of the nonlinear succeptibility
+It should be noted, that the susceptibilities here are not simple
+scalars, but are certain values of the nonlinear susceptibility
 tensor. For a monochromatic field, $\chi_1$ and $\chi_3$ are constant
-as $\omega$ is constant. Defining \fxwarning{Implicit approksimation:
+as $\omega$ is constant. Defining \fxwarning{Implicit approximation:
   feltet er ikke så stærkt, at der kræves højere ordener.}
 \begin{align}
   - \chi \frac{\omega^2}{c^2} \mathcal{E}
   \equiv - \chi_1 \frac{\omega^2}{c^2} \mathcal{E}
   - \chi_3 \frac{\omega^2}{c^2} |\mathcal{E}|^2 \mathcal{E}
 \end{align}
-and using $n^2 = 1 + \chi$ leads to
+and using $n^2 = 1 + \chi$ yields
 \begin{align}
   n &= \sqrt{1 + \chi_1 + \chi_3 |\mathcal{E}|^2}
   = n_0 \sqrt{1 + \frac{\chi_3}{n_0^2} |\mathcal{E}|^2}
@@ -126,24 +126,27 @@ and using $n^2 = 1 + \chi$ leads to
   \equiv n_0 + \tfrac{1}{2} n_2 |\mathcal{E}|^2,
 \end{align}
 where $n_0 = \sqrt{1 + \chi_1}$ is the linear refractive index in the
-medium. Clearly, the effective refractive index felt by the
-propagating wave, depends on the form of the electric field.
+medium.
+It is seen that the effective refractive index
+depends quadratically on the electric field amplitude $\mathcal{E}(x,y,z)$.
+%Clearly, the effective refractive index felt by the
+%propagating wave depends on the form of the electric field.
 
 
 \section{Qualitative interpretation and uses}
 \label{sec:kerr-interpr}
 
-As shown i figure~\ref{fig:kerr-refrac}, a gaussian beam, which is a
+As shown in figure~\ref{fig:kerr-refrac}, a Gaussian beam, which is a
 beam exhibiting cylindrical symmetry and where the intensity
-distribution is or nearly is gaussian, feels a larger refractive index
-closer to the beam axis. Eqn.~\eqref{eq:kerr-n-chi} shows, that this
-nonlinear correction is proportional to the norm square of the field
-amplitude, ie. the beam intensity.
+distribution is or nearly is Gaussian, feels a larger refractive index
+closer to the beam axis. Eqn.~\eqref{eq:kerr-n-chi} shows that this
+nonlinear correction is proportional to the norm squared of the field
+amplitude, i.e. the beam intensity.
 
-The beam size of an gaussian beam is not constant, but varies along
+The beam size of a Gaussian beam is not constant, but varies along
 the beam axis $z$, with minimum beam cross section found at the beam
 waist. Using a geometric interpretation of the light, rays moving away
-from the waist have increasing distance from the axis, ie. radial
+from the waist have increasing distance from the axis, i.e. radial
 distance $r$, leading to a broadening of the beam and a lower
 intensity. As such, the rays move from a region of high to lower
 refraction index, leading to a reflection of the ray back towards the
@@ -160,8 +163,8 @@ beam axis.
   \label{fig:kerr-refrac}
 \end{figure}
 
-This self-focusing competes with diffractive spreading and below a
-certain critical intensity, self-focusing is not observed. This limit
+This self-focusing effect competes with diffractive spreading.
+Below a certain critical intensity, self-focusing is not observed. This limit
 is normally given in terms of total beam power, for example:
 \begin{align}
   \label{eq:1}
@@ -178,14 +181,14 @@ where the angular diffractive divergence of the cylindrical beam is $a
 linearly in $n_2$ but increases quadratically in wavelength.
 
 As can be expected, extreme power past the critical power will lead to
-undesired effects in the medium. These effects include multiphoton
+undesired effects in the medium. These effects include multi photon
 ionisation and other dielectric breakdown effects, potentially leading
 to destruction of the medium.
 
-In optics, media where this self-focusing is present are termed Kerr
+In optics, media exhibiting this self-focusing effect are called Kerr
 lenses, as the passive medium acts as a lens for beams passing
 through. The dioptric power (inverse focal length) of a Kerr lens of
-length $z$ for a circular gaussian beam of power $P$ with waist radius
+length $z$ for a circular Gaussian beam of power $P$ with waist radius
 $w_0$ is
 \cite{yefet-kerrlens}
 \begin{align}
@@ -193,9 +196,9 @@ $w_0$ is
   f\idx{kerr}\inv = \frac{4}{\pi} \frac{n_2 P}{w_0^4} z.
 \end{align}
 
-Kerr lenses have the added anvantage over standard optical lenses,
+Kerr lenses have the added advantage over standard optical lenses,
 that the Kerr lenses do not require alignment of the optical axis of
-the lens and the beam axis. The is due to the fact, that the optical
+the lens and the beam axis. The is due to the fact that the optical
 axis of the Kerr lens is induced by the electric field of the laser
 beam. This advantage is utilized in Kerr lens mode-locking.
 
