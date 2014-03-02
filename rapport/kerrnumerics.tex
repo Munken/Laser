@@ -49,13 +49,13 @@ and second order derivatives can then be approximated by the central finite diff
 \end{equation}
 
 The Crank-Nicolson method relates the value of $E$ at the $n+1$ $z$-step to the value in the
-$n$'th step via the equalities of the forward and backward Euler method. Note that $i$ denotes the
-step in the $r$ direction.
-\begin{equation}
+$n$'th step via the equalities of the forward and backward Euler method \begin{equation}
   \label{eq:Crank-Nicolson-discrete}
   \frac{E^{n+1}_{i} - E^{n}_{i}}{\Delta z} = \half \big[F_{i}^{n+1}+F_{i}^{n} \big].
 \end{equation}
-The right hand side of the can be evaluated using the central difference approximation. This gives
+Note that $i$ denotes the
+step in the $r$ direction.
+The right hand side can be evaluated using the central difference approximation. This gives
 a set of equations for $E^{n+1}$ that depends on $E^{n}$ i.e. the values in the previous step
 \begin{align}
   \notag
@@ -89,8 +89,8 @@ we enforce that $E \rightarrow 0$ as $r \rightarrow \infty$.
 Furthermore the first derivative in $r = 0$ should be 0 since the beam is cylindrically symmetric.
 
 We have tried to introduce these boundary conditions in two ways. \Cref{fig:kerr-double} shows a
-simulation where we have simulated on $\pm r$. \Cref{fig:kerr-single} shows the same simulation
-where we have only simulated from 0. It is clear from these two figures that we have numerical
+simulation where we have simulated the interval \mbox{$[-r_\text{max},r_\text{max}]$}. \Cref{fig:kerr-single} shows the same simulation
+where we have only simulated from $r = 0$. It is clear from these two figures that we have numerical
 instabilities for the small $r$-values. We have not been able to solve this problem so we have not
 been able to reproduce \cite{prl-selffocus}[Fig. 1]. 
 \begin{figure}[htb]
