@@ -23,7 +23,7 @@ enter the nonlinear medium in superposition:
 \[
      \mathbf{\mathbf{E}}(t) = \Re\left(\mathcal{E}_1e^{i(\mathbf{k_1} \cdot \mathbf{r} - \omega_1 t)}+\mathcal{E}_2e^{i(\mathbf{k_2} \cdot \mathbf{r} - \omega_2 t)} \right).
 \]
-The second order part of the polarity expansion becomes\cite[sec.~21.2C]{saleh}
+The second order part of the polarity becomes\cite[sec.~21.2C]{saleh}
 \begin{align}
      \mathbf{P}^{NL} & = \varepsilon_0 \chi^{(2)} \mathbf{E}^2(t) \nonumber \\
 &= \varepsilon_0 \chi^{(2)} 2 \Re \left[
@@ -33,20 +33,16 @@ The second order part of the polarity expansion becomes\cite[sec.~21.2C]{saleh}
 + 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\mathbf{k_1} - \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1-\omega_2)t)} 
 \right] \label{eq:MixPNL}.
 \end{align}
-It is seen that new frequencies are generated; $0$, the uninteresting one, $2\omega_1$ and $2\omega_2$, which are second harmonics of the the original frequencies, and more interestingly, the sum and difference of the initial frequencies. The last two frequency couplings are often referred to as up- and down-conversion respectively.
+It is seen that new frequencies are generated: $0$, the uninteresting\footnote{Being constant, it drops out of the wave equation and produces no radiation.} one, $2\omega_1$ and $2\omega_2$, which are second harmonics of the original frequencies, and more interestingly, the sum and difference of the initial frequencies. The last two frequency couplings are often referred to as up- and down-conversion respectively.
 
-It is clear that for the up- and down-conversion the third wave frequency will be:
-\begin{equation}
+It is clear from \cref{eq:MixPNL} that for the up- and down-conversion, the third wave frequency and -vector will be:
+\begin{align}
   \label{qe:freqCond}
-\omega_3 = \omega_1 \pm \omega_2
-\end{equation}
-and that a further phase matching constraint on the wave vector is necessary,
-\[
-\mathbf{k}_3 = \mathbf{k}_1 \pm \mathbf{k}_2,
-\]
-for a strong feedback in electric field change.
+  \omega_3 = \omega_1 \pm \omega_2 \\
+  \mathbf{k}_3 = \mathbf{k}_1 \pm \mathbf{k}_2.
+\end{align}
 
-Physical this means that ones the third wave is created, it will also couple back to
+Physically this means that ones the third wave is created, it will also couple back to
 the two other waves, but these constraints secures that a neutral interaction is sustained through time and space. 
 
 In a simple model the up-conversion can be considered as a multiphoton exitation that emits new light at the sum frequency. The down-conversion as a exitation of the first photon energy and a deexitation (or destructive interference) in the material corresponding to the second photon energy, then emitting the difference frequency.
