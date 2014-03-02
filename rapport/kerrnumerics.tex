@@ -41,16 +41,16 @@ This is the case for our equation, since it can be rewritten as
   i\pdiff{E}{z} = -\frac{1}{r} \pdiff{E}{r} - \ppdiff{E}{r} - |E|^{2} E. 
 \end{equation}
 
-In order to evaluate this numerically we discretise $z$ and $r$ in order to make a grid. The first
+In order to evaluate this numerically, we discretise $z$ and $r$ in a grid. The first
 and second order derivatives can then be approximated by the central finite difference
 \begin{equation}
   \label{eq:central-diff}
-  f'(x) = \frac{f(x+\half h) - f(x - \half x)}{h} \quad f''(x) = \frac{f(x+h) - 2f(x) + f(x-h)}{h^{2}}.
+  f'(x) = \frac{f(x+\half h) - f(x - \half h)}{h} \quad f''(x) = \frac{f(x+h) - 2f(x) + f(x-h)}{h^{2}}.
 \end{equation}
 
 The Crank-Nicolson method relates the value of $E$ at the $n+1$ $z$-step to the value in the
-$n$'th step via the equalities of the forward and backward Euler method. Note that $i$ denote the
-step in $r$
+$n$'th step via the equalities of the forward and backward Euler method. Note that $i$ denotes the
+step in the $r$ direction.
 \begin{equation}
   \label{eq:Crank-Nicolson-discrete}
   \frac{E^{n+1}_{i} - E^{n}_{i}}{\Delta z} = \half \big[F_{i}^{n+1}+F_{i}^{n} \big].
