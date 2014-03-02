@@ -2,9 +2,8 @@
 \label{cha:mixing}
 
 
-The Three-wave mixing is a property of the second order nonlinearity of the polarity dependence of the electric field, $\mathcal{E}(t)$. 
-It is a phenomenon where the two waves mix together to a third. 
-
+The Three-wave mixing is a property of the second order nonlinearity of the polarity dependence of the electric field, $\mathcal{E}(t)$, where two waves couple together to form a third new wave.
+Qualitatively the phenomenon can be understood by a simple model. The two waves induces a polarization in the material which's oscilation is a superposition of the two. Pressumed that the material has the right properties, this superimposed oscilating polarization will manifest itself as an electromagnetic wave. 
 
 
 \section{Mathematical formulation and uses}
@@ -40,12 +39,13 @@ for a strong feedback in electric field change.
 Physical this means that ones the third wave is created, it will also couple back to
 the two other waves, but these constraints secures that a neutral interaction sustained through time and space. 
 
+In a simple model the up-conversion can be considered as a multiphoton exitation that emits new light at the sum frequency. The down-conversion as a exitation of the first photon energy and a deexitation (or destructive interference) corresponding to the second photon energy.
 
 
 
 \section{Numeric formulation of up-conversion}
 \label{sec:mixing-numeric}
-
+ 
 To get a numerical interpretation of the result, one can assume the
 \cref{qe:freqCond} and inject the up-conversion part of \cref{eq:MixPNL} into the time dependent wave equation of each wave \cite[Equation 3.39]{shen}:
 
@@ -73,11 +73,11 @@ equations  (2) in \cite{bakker} and can be solved with the Runge-Kutta procedure
 as described.
 
 Typically this is done in KDP or KTP crystals such as the sum frequency conversion
-done in \cite{sumFreq} where a 455 nm is med from a 807 nm and a 1062 source. Though only with an efficienty of $0.01\%$.
+done in \cite{sumFreq} where a 455 nm is med from a 807 nm and a 1062 source. Though only with an efficienty of $0.01\%$, which is assumed to be due to beam mis-alignment. Efficiency's upto $93.7\%$ has been achieved by DTU Fotonik \cite{DTU}, which they use for optical coherence tomography.
 
 Multiple wave mixing can be optained at higher orders of nonlinearity terms, such
-that the third order gives rise to four-wave mixing, but these will naturaly become
-even more restrained. 
+that the third order gives rise to four-wave mixing and so on.
+
 
 %%% Local Variables: 
 %%% mode: latex
