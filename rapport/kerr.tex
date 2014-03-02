@@ -153,13 +153,50 @@ refraction index, leading to a reflection of the ray back towards the
 beam axis.
 
 \begin{figure}[t!]
-  \centering
-  \fbox{\begin{minipage}[t][3cm]{.3\linewidth}
-      \centering\vspace*{0pt plus 1 fill}
-      Woop woop!
-      \vspace*{0pt plus 1 fill}
-    \end{minipage}}
-  \caption{Gaussisk beamprofil og effektivt brydningsindeks.}
+  \pgfmathdeclarefunction{gauss}{2}{%
+    \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+  }
+  \newenvironment{gaussaxis}[2][]{%
+    \begin{axis}[
+      domain=-10:10,
+      samples=100,
+      ymax=.3,
+      height=5cm,
+      axis lines=middle,
+      axis line style={-latex},
+      every axis x label/.style={
+        at=(current axis.right of origin),
+        anchor=west
+      },
+      xlabel=$r$,
+      ylabel=#2,
+      xtick=\empty,
+      ytick=\empty,
+      clip=false,
+      #1]}{\end{axis}}
+  \begin{minipage}[t]{.5\linewidth}
+    \centering
+    \vspace*{0pt}
+    \begin{tikzpicture}
+      \begin{gaussaxis}{$|\mathcal{E}|^2$}
+        \addplot[very thick] {gauss(0,1.6)};
+      \end{gaussaxis}
+    \end{tikzpicture}
+  \end{minipage}%
+  \begin{minipage}[t]{.5\linewidth}
+    \vspace*{0pt}
+    \begin{tikzpicture}
+      \begin{gaussaxis}{$n$}
+        \addplot[very thick,yshift=1cm] {0.2*gauss(0,1.6)};
+        \addplot[dashed,yshift=1cm] {0} node[pos=1,right] {$n_0$};
+      \end{gaussaxis}
+    \end{tikzpicture}
+  \end{minipage}
+  \caption{Gaussian beam profile (left) and effective refractive index
+    (right) in arbitraty units. Note, that the contribution to the
+    refractive index due to the Kerr effect $\half n_2
+    |\mathcal{E}|^2$, is not to scale wrt. the linear refractive index
+    $n_0$.}
   \label{fig:kerr-refrac}
 \end{figure}
 
