@@ -12,16 +12,17 @@
 \usepackage{url}
 \urlstyle{rm}
 
-% Subfigure
+% Subfigure og andre småting for figurer
 \newsubfloat{figure}% Allow subfloats in figure environment
+\captionnamefont{\small\bfseries}
+\captiontitlefont{\small}
+\captiondelim{\quad}
 
 % Gauss-fuktion til plot af gaussisk beamprofil.
 \usepackage{tikz}
+\tikzset{font=\small} % Samme fontstørrelse i TikZ som i figurtekst
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.6}
-\pgfmathdeclarefunction{gauss}{2}{%
-  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
-}   
 
 % Pæne fonte. Mums mums mums!
 \usepackage[sf]{libertine}
