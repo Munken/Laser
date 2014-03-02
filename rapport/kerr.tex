@@ -90,7 +90,7 @@ self-focusing of the beam within a passive medium.
 
 The mathematical formulation of the Kerr effect is derived in
 \textcite[sec.~10.3]{milonni}. For a monochromatic laser field $E =
-\mathcal{E}(x,y) e^{-i \omega t}$ with frequency $\omega$ in an isotropic
+\mathcal{E}(x,y,z) e^{-i \omega t}$ with frequency $\omega$ in an isotropic
 and centrosymmetric medium (i.e. a medium which quantum states have
 definite parity), an alternative wave equation for the complex laser
 field and polarization amplitudes is found. The most important point
@@ -128,8 +128,7 @@ and using $n^2 = 1 + \chi$ yields
 where $n_0 = \sqrt{1 + \chi_1}$ is the linear refractive index in the
 medium.
 It is seen that the effective refractive index
-depends quadratically on the electric field amplitude $\mathcal{E}(x,y)$.
-
+depends quadratically on the electric field amplitude $\mathcal{E}(x,y,z)$.
 %Clearly, the effective refractive index felt by the
 %propagating wave depends on the form of the electric field.
 
@@ -140,11 +139,11 @@ depends quadratically on the electric field amplitude $\mathcal{E}(x,y)$.
 As shown in figure~\ref{fig:kerr-refrac}, a Gaussian beam, which is a
 beam exhibiting cylindrical symmetry and where the intensity
 distribution is or nearly is Gaussian, feels a larger refractive index
-closer to the beam axis. Eqn.~\eqref{eq:kerr-n-chi} shows, that this
-nonlinear correction is proportional to the norm square of the field
+closer to the beam axis. Eqn.~\eqref{eq:kerr-n-chi} shows that this
+nonlinear correction is proportional to the norm squared of the field
 amplitude, i.e. the beam intensity.
 
-The beam size of an Gaussian beam is not constant, but varies along
+The beam size of a Gaussian beam is not constant, but varies along
 the beam axis $z$, with minimum beam cross section found at the beam
 waist. Using a geometric interpretation of the light, rays moving away
 from the waist have increasing distance from the axis, i.e. radial
@@ -164,7 +163,7 @@ beam axis.
   \label{fig:kerr-refrac}
 \end{figure}
 
-This self-focusing competes with diffractive spreading and below a
+This self-focusing effect competes with diffractive spreading and below a
 certain critical intensity, self-focusing is not observed. This limit
 is normally given in terms of total beam power, for example:
 \begin{align}
