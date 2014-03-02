@@ -27,16 +27,18 @@ and put into the second order part of the polarity expansion \cite[sec.~21.2C]{s
 Since this gives feedback to the electromagnetic field in \cref{eq:wave-general}, new frequencies are generated; $0$, the uninteresting one, $2\omega_1$ and $2\omega_2$, which are the original frequencies second harmonics, and more interesting, the sum and difference of the initial frequencies. The last two frequency couplings are often referred to as up- and down-conversion respectively.
 
 It is clear that for the up- and down-conversion the third wave frequency will be:
-\[
+\begin{equation}
+  \label{qe:freqCond}
 \omega_3 = \omega_1 \pm \omega_2
-\]
+\end{equation}
 and that a further phase matching constraint on the wave vector is necessary,
 \[
 \mathbf{k}_3 = \mathbf{k}_1 \pm \mathbf{k}_2,
 \]
 for a strong feedback in electric field change.
 
-Physical this means that ones the third wave is created, it will also couple back to the two other waves, but these constraints secures that the aneutral interaction sustained through time and space. 
+Physical this means that ones the third wave is created, it will also couple back to
+the two other waves, but these constraints secures that a neutral interaction sustained through time and space. 
 
 
 
@@ -44,15 +46,26 @@ Physical this means that ones the third wave is created, it will also couple bac
 \section{Numeric formulation of up-conversion}
 \label{sec:mixing-numeric}
 
-To get a numerical interpretation of the result, one can inject the up-conversion part of \cref{eq:MixPNL} into the time dependent wave equation of each wave \cite[Equation 3.39]{shen}:
+To get a numerical interpretation of the result, one can assume the
+\cref{qe:freqCond} and inject the up-conversion part of \cref{eq:MixPNL} into the time dependent wave equation of each wave \cite[Equation 3.39]{shen}:
 
 \begin{align*}
-\paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t} 
-&= \frac{i 2 \pi \omega_i^{2}}{k c^2} \mathbf{P}^{NL} \paren{z,t} e^{i \paren{k_i z - \omega t}} \\
-&= \frac{i \omega_i \chi^{(2)}}{n_i c} 2\mathcal{E}_1 \mathcal{E}_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)} e^{i \paren{k_i z - \omega t}}
-,
+\paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t}
+&= \frac{i 2 \pi \omega_i^{2}}{k c^2} \mathbf{P}^{NL} \paren{z,t} e^{i \paren{k_i z - \omega_{i}
+    t}} \Rightarrow \\
+\paren{ \pdiff{}{z}  + \frac{1}{v_1^{g}} } \mathcal{E}_1 \paren{z, t}
+&= \frac{i \omega_1 \chi^{(2)}}{2 n_1 c} \mathcal{E}_2^{*}\mathcal{E}_3 e^{i (k_3 - k_2 -k_1) z
+    t} \\
+\paren{ \pdiff{}{z}  + \frac{1}{v_2^{g}} } \mathcal{E}_2 \paren{z, t}
+&= \frac{i \omega_2 \chi^{(2)}}{2 n_2 c} \mathcal{E}_1^{*}\mathcal{E}_3 e^{i (k_3 - k_2 -k_1) z
+    t} \\
+  \paren{ \pdiff{}{z}  + \frac{1}{v_3^{g}} } \mathcal{E}_3 \paren{z, t}
+  &= \frac{i \omega_3 \chi^{(2)}}{2 n_3 c} \mathcal{E}_1\mathcal{E}_2 e^{i (k_3 - k_2 -k_1) z
+    t}, \\
 \end{align*}
-where we used that $\omega_i = k_ic$
+where the identity $\omega_i = k_ic$ has been used, and also the rotating wave
+approximation and slowly varying amplitude approximation. These are equivalent to
+equation 2 in \cite{bakker}
 
 
 Example KDP crystal
