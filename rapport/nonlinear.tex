@@ -1,4 +1,11 @@
 \documentclass[a4paper,oneside,article]{memoir}
+% Changing the margins 
+\setlrmarginsandblock{2.5cm}{2.5cm}{*}           % 2 cm margin i hver side. 
+\setulmarginsandblock{3cm}{3cm}{*}           % Giver 4 cm margin i toppen.
+\setmarginnotes{0.5em}{1.9cm}{0.5em}         % Plads til marginnoter
+\checkandfixthelayout[nearest]               % Udregner det manglende
+
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -121,6 +128,7 @@ self-focusing using the Kerr effect; and wave mixing.
 
 
 \nocite{*}
+\clearpage
 \printbibliography
 
 
