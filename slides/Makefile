@@ -22,4 +22,4 @@ clean:
 	rm -f *.run.xml
 	rm -f *.synctex*
 	rm -f *.toc
-	rm -f *snm
+	rm -f *.snm
