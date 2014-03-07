@@ -10,6 +10,7 @@ auto/
 *.lot
 *.nav
 *.out
+*.pdf
 *.run.xml
 *.synctex*
 *.snm
