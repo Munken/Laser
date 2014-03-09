@@ -1,5 +1,29 @@
+\section{Wave mixing}
+
 \begin{frame}
-  \frametitle{Wave mixing}
+  \frametitle{Mathematical formulation}
+Electromagnetic field: 
+\[
+     \mathbf{\mathbf{E}}(t) = \Re\left(\mathcal{E}_1e^{i(\mathbf{k_1} \cdot \mathbf{r} - \omega_1 t)}+\mathcal{E}_2e^{i(\mathbf{k_2} \cdot \mathbf{r} - \omega_2 t)} \right).
+\]
+
+
+\begin{align}
+     \mathbf{P}^{NL} & = \varepsilon_0 \chi^{(2)} \mathbf{E}^2(t) \nonumber \\
+&= \varepsilon_0 \chi^{(2)} 2 \Re \left[
+\left(|\mathcal{E}_1|^2+|\mathcal{E}_2|^2\right)e^{0} + |\mathcal{E}_1|^2e^{i2(\mathbf{k_1} z - \omega_1t)}+|\mathcal{E}_2|^2e^{i2(\mathbf{k_2} z - \omega_2t)} \right.\nonumber \\
+& \left.
++ 2\mathcal{E}_1 \mathcal{E}_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)} 
++ 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\mathbf{k_1} - \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1-\omega_2)t)} 
+\right] \label{eq:MixPNL}.
+\end{align}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Up and down conversion}
+
+
   \begin{center}
   \begin{tikzpicture}[
     ph/.style={
@@ -39,6 +63,9 @@
   \end{tikzpicture}
   \end{center}
 \end{frame}
+
+
+
 
 %%% Local Variables: 
 %%% mode: latex
