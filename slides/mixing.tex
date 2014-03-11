@@ -1,71 +1,77 @@
 \section{Wave mixing} 
 
 \begin{frame}
-\frametitle{Three-wave mixing}
-\[
-\mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
-\textcolor{red}{\chi\order2 \mathbf E^2} + \chi\order3 \mathbf E^3 \dots )
-\]
+  \frametitle{Three-wave mixing}
+  \[
+  \mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
+  \textcolor{red}{\chi\order2 \mathbf E^2} + \chi\order3 \mathbf E^3 \dots )
+  \]
 
 \end{frame}
 
 \begin{frame}
   \frametitle{Mathematical formulation}
+
 Two waves propagating as a superimposed electromagnetic field: 
-\[
-     \mathbf{\mathbf{E}}(t) = \Re\left(\mathcal{E}_1e^{i(\mathbf{k_1} \cdot \mathbf{r} - \omega_1 t)}+\mathcal{E}_2e^{i(\mathbf{k_2} \cdot \mathbf{r} - \omega_2 t)} \right).
-\]
 
+    \[
+    \mathbf{\mathbf{E}}(t) = \Re\left(\mathcal{E}_1e^{i(\mathbf{k_1} \cdot \mathbf{r} - \omega_1 t)}+\mathcal{E}_2e^{i(\mathbf{k_2} \cdot \mathbf{r} - \omega_2 t)} \right).
+    \]
 
-\begin{align}
-     \mathbf{P}^{NL} & = \varepsilon_0 \chi^{(2)} \mathbf{E}^2(t) \nonumber \\
-&= \varepsilon_0 \chi^{(2)} 2 \Re \left[
-\left(|\mathcal{E}_1|^2+|\mathcal{E}_2|^2\right)e^{0} + |\mathcal{E}_1|^2e^{i2(\mathbf{k_1} z - \omega_1t)}+|\mathcal{E}_2|^2e^{i2(\mathbf{k_2} z - \omega_2t)} \right.\nonumber \\
-& \left.
-+ 2\mathcal{E}_1 \mathcal{E}_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)} 
-+ 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\mathbf{k_1} - \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1-\omega_2)t)} 
-\right] \label{eq:MixPNL}.
-\end{align}
+    \uncover<1->{
+    \begin{align}
+      \mathbf{P}^{NL} & = \varepsilon_0 \chi^{(2)} \mathbf{E}^2(t) \nonumber \\\uncover<2->{
+      &= \varepsilon_0 \chi^{(2)} 2 \Re \left[
+        \left(|\mathcal{E}_1|^2+|\mathcal{E}_2|^2\right)e^{0}
+        + \color<3>{green}{|\mathcal{E}_1|^2e^{i2(\mathbf{k_1} z - \omega_1t)}+|\mathcal{E}_2|^2e^{i2(\mathbf{k_2} z - \omega_2t)}} \right.\nonumber \\
+      & \left.
+        + 2\mathcal{E}_1 \mathcal{E}_2e^{i((\mathbf{k_1} + \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1+\omega_2)t)} 
+        + 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\mathbf{k_1} - \mathbf{k_2}) \cdot \mathbf{r} - (\omega_1-\omega_2)t)} 
+      \right] \label{eq:MixPNL}.}
+    \end{align}
+    }
+    \color{green} SHG
+
 
 \end{frame}
 
 \begin{frame}
-  \frametitle{Up and down conversion}
-
+  \frametitle{Up- and down-conversion}
+  
   \textbf{Multiphoton picture}
   % \begin{center}
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[
-    ph/.style={
-      -latex,
-      decorate,
-      decoration={snake,amplitude=1,segment length=5pt},
-      red,
-      thick
-    },
-    lvl/.style={
-      ultra thick
-    },
-    % scale=0.8,
-    scale = 0.6,
-    ]
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[
+      ph/.style={
+        -latex,
+        decorate,
+        decoration={snake,amplitude=1,segment length=5pt},
+        red,
+        thick
+      },
+      lvl/.style={
+        ultra thick
+      },
+      % scale=0.8,
+      scale = 0.6,
+      ]
 
-    \begin{scope}
-      \draw[lvl] (0,0) -- +(3,0);
-      \draw[lvl] (0,3) -- +(2,0);
-      \draw[lvl] (0,4) -- +(3,0);
-      \draw[ph] (.5,0) -- +(0,3) node[midway,right] {$\omega_1$};
-      \draw[ph] (1.5,3) -- +(0,1) node[midway,right] {$\omega_2$};
+      \begin{scope}
+        \draw[lvl] (0,0) -- +(3,0);
+        \draw[lvl] (0,3) -- +(2,0);
+        \draw[lvl] (0,4) -- +(3,0);
+        \draw[ph] (.5,0) -- +(0,3) node[midway,right] {$\omega_1$};
+        \draw[ph] (1.5,3) -- +(0,1) node[midway,right] {$\omega_2$};
 
-      \draw[lvl] (2,0) -- +(1,0);
-      \draw[lvl] (2,4) -- +(1,0);
-      \draw[ph] (2.5,4) -- +(0,-4) node[midway,right] {$\omega_3$};
-    \end{scope}
-  \end{tikzpicture}
-  \caption{Up}
-  \label{fig:up}
-\end{figure}
+        \draw[lvl] (2,0) -- +(1,0);
+        \draw[lvl] (2,4) -- +(1,0);
+        \draw[ph] (2.5,4) -- +(0,-4) node[midway,right] {$\omega_3$};
+      \end{scope}
+    \end{tikzpicture}
+    \caption{Up-conversion}
+    \label{fig:up}
+  \end{figure}
 
   \begin{figure}
     % \centering
