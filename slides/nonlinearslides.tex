@@ -1,4 +1,4 @@
-\documentclass[xcolor=svgnames,smaller,draft]{beamer}
+\documentclass[xcolor=svgnames,smaller]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -72,12 +72,12 @@
 %------------------------------------------------------------------------
 \setcounter{tocdepth}{1}
 
-\AtBeginSection[] {
-  \begin{frame}<beamer>
-    \frametitle{Outline}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
+% \AtBeginSection[] {
+%   \begin{frame}<beamer>
+%     \frametitle{Outline}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
 
 \begin{document}
 
@@ -99,8 +99,12 @@
 \frame{\titlepage}
 \input{introduction}
 \input{mixing}
+
+\section{The Kerr effect}
 \input{kerr-math}
 \input{diff-solve}
+
+\section{Understanding the Kerr effect}
 \input{kerr-usage}
 
 \end{document}
