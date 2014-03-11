@@ -1,11 +1,13 @@
-\section{Wave mixing}
+\section{Wave mixing} 
 
+\begin{frame}
+\frametitle{Three-wave mixing}
 \[
 \mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
 \textcolor{red}{\chi\order2 \mathbf E^2} + \chi\order3 \mathbf E^3 \dots )
 \]
-test
 
+\end{frame}
 
 \begin{frame}
   \frametitle{Mathematical formulation}
@@ -30,8 +32,10 @@ Two waves propagating as a superimposed electromagnetic field:
 \begin{frame}
   \frametitle{Up and down conversion}
 
-
-  \begin{center}
+  \textbf{Multiphoton picture}
+  % \begin{center}
+\begin{figure}
+  \centering
   \begin{tikzpicture}[
     ph/.style={
       -latex,
@@ -43,7 +47,8 @@ Two waves propagating as a superimposed electromagnetic field:
     lvl/.style={
       ultra thick
     },
-    %scale=0.8,
+    % scale=0.8,
+    scale = 0.6,
     ]
 
     \begin{scope}
@@ -57,20 +62,60 @@ Two waves propagating as a superimposed electromagnetic field:
       \draw[lvl] (2,4) -- +(1,0);
       \draw[ph] (2.5,4) -- +(0,-4) node[midway,right] {$\omega_3$};
     \end{scope}
-
-    \begin{scope}[xshift=5cm]
-      \draw[lvl] (0,0) -- +(3,0);
-      \draw[lvl] (0,4) -- +(3,0);
-      \draw[lvl] (1,3) -- +(2,0);
-
-      \draw[ph] (0.5,0) -- +(0,4) node[midway,right] {$\omega_1$};
-      \draw[ph] (1.5,4) -- +(0,-1) node[midway,right] {$\omega_2$};
-      \draw[ph] (2.5,3) -- +(0,-3) node[midway,right] {$\omega_3$};
-    \end{scope}
   \end{tikzpicture}
-  \end{center}
+  \caption{Up}
+  \label{fig:up}
+\end{figure}
+
+  \begin{figure}
+    % \centering
+    \begin{tikzpicture}
+      [
+      ph/.style={
+        -latex,
+        decorate,
+        decoration={snake,amplitude=1,segment length=5pt},
+        red,
+        thick
+      },
+      lvl/.style={
+        ultra thick
+      },
+      % scale=0.8,
+      scale = 0.6,
+      ]
+      \begin{scope}[xshift=5cm]
+        \draw[lvl] (0,0) -- +(3,0);
+        \draw[lvl] (0,4) -- +(3,0);
+        \draw[lvl] (1,3) -- +(2,0);
+
+        \draw[ph] (0.5,0) -- +(0,4) node[midway,right] {$\omega_1$};
+        \draw[ph] (1.5,4) -- +(0,-1) node[midway,right] {$\omega_2$};
+        \draw[ph] (2.5,3) -- +(0,-3) node[midway,right] {$\omega_3$};
+      \end{scope}
+    \end{tikzpicture}
+    \caption{Down-conversion}
+    \label{fig:down}
+  \end{figure}
+
+  
+  % \end{center}
 \end{frame}
 
+\begin{frame}{Numerical setup}
+  \begin{itemize}
+  \item Assuming 
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Higher orders}
+  \begin{itemize}
+  \item Third order: Four-wave mixing.
+  \end{itemize}
+
+\end{frame}
 
 
 
