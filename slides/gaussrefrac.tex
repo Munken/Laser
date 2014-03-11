@@ -1,0 +1,56 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\tikzset{font=\small} % Samme fontstørrelse i TikZ som i figurtekst
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.6}
+
+% Pæne fonte. Mums mums mums!
+\usepackage[sf]{libertine}
+\usepackage[sc]{mathpazo}
+\linespread{1.06}
+\usepackage{microtype}
+
+\begin{document}
+
+
+  \pgfmathdeclarefunction{gauss}{2}{%
+    \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+  }
+  \newenvironment{gaussaxis}[2][]{%
+    \begin{axis}[
+      domain=-10:10,
+      samples=100,
+      ymax=.3,
+      height=5cm,
+      axis lines=middle,
+      axis line style={-latex},
+      every axis x label/.style={
+        at=(current axis.right of origin),
+        anchor=west
+      },
+      xlabel=$r$,
+      ylabel=#2,
+      xtick=\empty,
+      ytick=\empty,
+      clip=false,
+      #1]}{\end{axis}}
+  \begin{minipage}[t]{.5\linewidth}
+    \centering
+    \vspace*{0pt}
+    \begin{tikzpicture}
+      \begin{gaussaxis}{$|\mathcal{E}|^2$}
+        \addplot[very thick] {gauss(0,1.6)};
+      \end{gaussaxis}
+    \end{tikzpicture}
+  \end{minipage}%
+  \begin{minipage}[t]{.5\linewidth}
+    \vspace*{0pt}
+    \begin{tikzpicture}
+      \begin{gaussaxis}{$n$}
+        \addplot[very thick,yshift=1cm] {0.2*gauss(0,1.6)};
+        \addplot[dashed,yshift=1cm] {0} node[pos=1,right] {$n_0$};
+      \end{gaussaxis}
+    \end{tikzpicture}
+  \end{minipage}
+
+\end{document}
