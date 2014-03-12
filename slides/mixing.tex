@@ -6,6 +6,14 @@
   \mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
   \textcolor{blue}{\chi\order2 \mathbf E^2} + \chi\order3 \mathbf E^3 \dots )
   \]
+  \begin{itemize}
+  \item \textit{Einstein summation convention} and
+    \textit{Kleinman's symmetry conjecture} are used.
+  \item Occurs in non-centrosymmetric materials, which can loose
+    their parity, so systems like solids are preferable; Birefringent-materials.
+  \end{itemize}
+
+  
 
 \end{frame}
 
@@ -46,11 +54,11 @@
   \begin{columns}
   \column{0.6\textwidth}
   \begin{align*}
-    \mathbf{P}^{NL} &= \varepsilon_0 \chi^{(2)} 2 \Re \Big[ \cdots \\ 
+    \mathbf{P}^{NL} &= \varepsilon_0 \chi^{(2)} 2 \Re \Big[ \dots \\ 
     &
     + 2\mathcal{E}_1 \mathcal{E}_2e^{i((\textcolor{purple}{\mathbf{k_1} + \mathbf{k_2}}) \cdot \mathbf{r} - (\textcolor{blue}{\omega_1+\omega_2})t)} \\
     &\left.
-      + 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\textcolor{purple}{\mathbf{k_1} - \mathbf{k_2}}) \cdot \mathbf{r} - (\textcolor{blue}{\omega_1-\omega_2})t)} \cdots
+      + 2\mathcal{E}_1 \mathcal{E}_2^*e^{i((\textcolor{purple}{\mathbf{k_1} - \mathbf{k_2}}) \cdot \mathbf{r} - (\textcolor{blue}{\omega_1-\omega_2})t)} \dots
       \right] 
   \end{align*}
   \begin{block}{Constraints}
@@ -142,18 +150,56 @@
   % \end{center}
 \end{frame}
 
-\begin{frame}{Numerical setup}
-  \begin{itemize}
-  \item For up-conversion.
-  \item Assuming previous contraints are fulfilled.
-\end{itemize}
+
+
+\begin{frame}{Applications}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{applications}
+    \caption{Applications}
+    \label{fig:applications}
+  \end{figure}
 
 \end{frame}
 
+\begin{frame}{Numerical setup}
+  \begin{itemize}
+  \item For up-conversion, $\omega_{3} = \omega_{1} + \omega_{2}$.
+  \item RWA and SVEA.
+\end{itemize}
+
+\begin{align*}
+\paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t}
+&= \frac{i 2 \pi \omega_i^{2}}{k c^2} \mathbf{P}^{NL} \paren{z,t} e^{i \paren{k_i z - \omega_{i}
+    t}} \Rightarrow \\%\tag{[Shen, equation 3.39]}\\
+% \paren{ \pdiff{}{z}  + \frac{1}{v_i^{g}} } \mathcal{E}_i \paren{z, t}
+% &= \frac{i \omega_i \chi^{(2)}}{2 n_i c} \mathcal{E}_j^{*}\mathcal{E}_k e^{i (k_k - k_j -k_i) z}, \text{where } i \neq j \neq k \\
+\paren{ \pdiff{}{z}  + \frac{1}{v_1^{g}} } \mathcal{E}_1 \paren{z, t}
+&= \frac{i \omega_1 \chi^{(2)}}{2 n_1 c} \mathcal{E}_2^{*}\mathcal{E}_3 e^{i (k_3 - k_2 -k_1) z
+t} \\
+\paren{ \pdiff{}{z}  + \frac{1}{v_2^{g}} } \mathcal{E}_2 \paren{z, t}
+&= \frac{i \omega_2 \chi^{(2)}}{2 n_2 c} \mathcal{E}_1^{*}\mathcal{E}_3 e^{i (k_3 - k_1 -k_2) z
+t} \\
+\paren{ \pdiff{}{z}  + \frac{1}{v_3^{g}} } \mathcal{E}_3 \paren{z, t}
+&= \frac{i \omega_3 \chi^{(2)}}{2 n_3 c} \mathcal{E}_1\mathcal{E}_2 e^{-i (k_1 - k_2 -k_3) z
+t}, \\
+\end{align*}
+
+\begin{itemize}
+\item Crank-Nicolson solution.
+\item Alternative: Iterative Runge-Kutta for discrete points in time.
+\end{itemize}
+
+
+\end{frame}
+ 
+
+
 
 \begin{frame}{Higher orders}
-  \begin{itemize}
-  \item Third order: Four-wave mixing.
+  \begin{itemize} 
+  \item Third order $\Rightarrow$ Four-wave mixing in centrosymmetric materials: Example of up to $93.7\%$ efficiency.
+  \item etc.
   \end{itemize}
 
 \end{frame}
