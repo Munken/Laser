@@ -1,5 +1,5 @@
 \section{Nonlinear optics}
-
+\begin{frame}{Nonlinear optics}
 
 
 
@@ -11,17 +11,28 @@
 \end{align*}
 
 \[
-\mathbf P = \epsilon_0 ( \chi\order1 \mathbf E +
-\chi\order2 \mathbf E^2 + \chi\order3 \mathbf E^3 \dots )
+\mathbf P = \epsilon_0 ( \textcolor{black}{\chi\order1_{ij} \mathbf E_{j}}
++ \textcolor{blue}{\chi\order2_{ijk} \mathbf E_{j} \mathbf E_{k}}
++ \textcolor{red}{\chi\order3_{ijkl} \mathbf E_{j} \mathbf E_{k} \mathbf E_{l} \dots} )
 \]
 
 
+\begin{itemize}
+\item \color{black} $\chi\order1_{ij}$: & Absorption and refraction.
+\item \color{blue}  $\chi\order1_{ij}$: & SHG, electro optic effect parametric
+  oscillation, etc.
+\item \color{red}   $\chi\order1_{ij}$: & Quadratic kerr effect, four-wave mixing,
+  self-focusing, etc.
+\end{itemize}
 
 
+
+\end{frame}
 
 
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "nonlinearslides"
+%%% TeX-engine: default
 %%% End: 
